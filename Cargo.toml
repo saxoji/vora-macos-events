@@ -5,9 +5,9 @@ edition = "2024"
 license = "MIT OR Apache-2.0"
 rust-version = "1.95"
 description = "Main-thread macOS Apple event adapter for FastMarkdownViewer"
-repository = "https://github.com/Quetzalcohuatl/fastmarkdownviewer"
+repository = "https://github.com/saxoji/vora-macos-events"
 readme = "README.md"
-include = ["src/**", "Cargo.toml", "README.md", "LICENSE-*"]
+include = ["src/**", "Cargo.toml", "README.md", "LICENSE-*", "DOCK_API.md", "AUDIT.md", "UPSTREAM.json"]
 
 [package.metadata.docs.rs]
 default-target = "aarch64-apple-darwin"

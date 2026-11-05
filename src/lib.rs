@@ -2,6 +2,11 @@
 #![deny(unsafe_op_in_unsafe_fn)]
 #![cfg(target_os = "macos")]
 
+mod dock;
+mod queue;
+mod registry;
+pub use dock::{DockEvent, DockInbox, DockMenuError, DockMenuRegistration};
+
 use objc2::rc::Retained;
 use objc2::{DefinedClass, MainThreadOnly, define_class, msg_send, sel};
 use objc2_app_kit::{NSApplication, NSMenu, NSMenuItem};
@@ -9,7 +14,7 @@ use objc2_foundation::{
     MainThreadMarker, NSAppleEventDescriptor, NSAppleEventManager, NSNotification,
     NSNotificationCenter, NSObject, NSObjectProtocol, ns_string,
 };
-use std::{cell::RefCell, path::PathBuf, rc::Rc};
+use std::path::PathBuf;
 
 pub enum Event {
     Open(Vec<PathBuf>),
@@ -17,27 +22,17 @@ pub enum Event {
 }
 
 #[derive(Clone, Default)]
-pub struct Inbox(Rc<RefCell<Pending>>);
-
-#[derive(Default)]
-struct Pending {
-    events: Vec<Event>,
-    wake: Option<Box<dyn Fn()>>,
-}
+pub struct Inbox(queue::Queue<Event>);
 
 impl Inbox {
     pub fn drain(&self) -> Vec<Event> {
-        std::mem::take(&mut self.0.borrow_mut().events)
+        self.0.drain()
     }
     pub fn set_wake(&self, wake: impl Fn() + 'static) {
-        self.0.borrow_mut().wake = Some(Box::new(wake));
+        self.0.set_wake(wake);
     }
     fn push(&self, event: Event) {
-        let mut pending = self.0.borrow_mut();
-        pending.events.push(event);
-        if let Some(wake) = &pending.wake {
-            wake();
-        }
+        self.0.push(event);
     }
 }
 

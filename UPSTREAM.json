@@ -13,12 +13,5 @@
     "Cargo.toml.orig": "8695332a53eb3e207c858f486fe1926a12bd53f610917b10937de07c193d1a73",
     "Cargo.lock": "f59e6753ec0dbdee9f2c3e219a93ab70ba52d1dbf0c3017677e9f3f6a074be7a"
   },
-  "ownerNamespaceChecked": "saxoji",
-  "candidateRepositoriesAbsent": [
-    "saxoji/fmv-macos-events",
-    "saxoji/fastmarkdownviewer"
-  ],
-  "githubRepositoryCreated": false,
-  "githubPushed": false,
-  "preparedAt": "2026-11-05T00:08:04.231243+00:00"
+  "extensionRepository": "https://github.com/saxoji/vora-macos-events"
 }
