@@ -1,0 +1,24 @@
+{
+  "package": "fmv-macos-events",
+  "version": "0.1.0",
+  "repository": "https://github.com/Quetzalcohuatl/fastmarkdownviewer",
+  "commit": "d60be0bd516439f1774fce99240cdadce1e4ac3b",
+  "path": "crates/macos-events",
+  "license": "MIT OR Apache-2.0",
+  "registryFiles": {
+    "src/lib.rs": "de09160840732a45533d224a66519221a2b6ed9d3fbc7e2de0cd5ca5bfae3062",
+    "LICENSE-MIT": "02a217c5d6bf177746f94b41d5ece15739c4bb376a9bd4f8cdd7ce37e2a1de0c",
+    "LICENSE-APACHE": "a1d459d0274af8535673466a916b3464f2f9cc7f1c117103b421628da1861e8e",
+    "README.md": "27e156dc3c7d644ff725b011bdfb178ceaf29a27b27464d77c5435f834933c44",
+    "Cargo.toml.orig": "8695332a53eb3e207c858f486fe1926a12bd53f610917b10937de07c193d1a73",
+    "Cargo.lock": "f59e6753ec0dbdee9f2c3e219a93ab70ba52d1dbf0c3017677e9f3f6a074be7a"
+  },
+  "ownerNamespaceChecked": "saxoji",
+  "candidateRepositoriesAbsent": [
+    "saxoji/fmv-macos-events",
+    "saxoji/fastmarkdownviewer"
+  ],
+  "githubRepositoryCreated": false,
+  "githubPushed": false,
+  "preparedAt": "2026-11-05T00:08:04.231243+00:00"
+}
